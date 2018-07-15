@@ -37,6 +37,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),
       body: new GridView.extent(
           maxCrossAxisExtent: 150.0,
+        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 5.0,
+        padding: EdgeInsets.all(5.0),
         children: _buildGridTitles(30),
       ),
     );
@@ -47,8 +50,10 @@ List<Widget> _buildGridTitles(numberOfTiles) {
   List<Container> listContainner = new List<Container>.generate(numberOfTiles,
   (int index){
     final imageName = 'images/master${index + 1}.jpg';
+
       return new Container(
-        child: new Image.asset(imageName),
+        child: new Image.asset(imageName,
+          fit: BoxFit.cover,),
       );
   }
   );
